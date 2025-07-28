@@ -1,7 +1,8 @@
 const express = require("express");
 const checkout = express.Router();
+
 const stripe = require("stripe")(
-  "sk_test_51RpN2bBQzHstFij9FXDV8BQWgby9Xzsnrh27LJQzFwn36QwTQKYH7MbXadbOTOD4HNgzLQpZz1xRlVUrxw7kV4oO00xHAMvdom"
+ process.env.stripe_secrete_key
 );
 const bodyParser = require("body-parser");
 checkout.use(bodyParser.json());
